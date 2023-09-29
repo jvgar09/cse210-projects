@@ -13,7 +13,7 @@ class Program
         // Your program choices can go here   
 
         // Display a prompt to the user
-        Console.Write("How did I see the hand of the Lord in my life today? ");
+        Console.Write("");
 
 
    
