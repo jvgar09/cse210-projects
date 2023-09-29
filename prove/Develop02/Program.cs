@@ -8,7 +8,7 @@ class Program
         Console.WriteLine("Welcome to the Journal Program! ");
 
         // Display the prompt for user choice
-        Console.WriteLine("Please select one of the following choices:");
+        Console.WriteLine("Please select one of the following choices: ");
 
         // Your program choices can go here   
 
