@@ -16,6 +16,7 @@ public class Journal {
         {
             foreach (Entry entry in _entries)
             {
+
                 outputFile.WriteLine($"{entry._date}~{entry._prompt}~{entry._answer}");
             }
         }
@@ -41,7 +42,7 @@ public class Journal {
         }
         else
         {
-            Console.WriteLine("Such File name dose not exists! ");
+            Console.WriteLine("Such File name dose not exists. ");
         }
     }
 
