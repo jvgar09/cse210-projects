@@ -40,14 +40,14 @@ class Program
             }
             else if (option == 3)
             {
-                Console.WriteLine("What is the name of the file that you will like to save?")
+                Console.WriteLine("What is the name of the file that you will like to save?");
                 journal._fileName = Console.ReadLine();
                 journal.SaveFile();
             
             }
             else if (option == 4) 
             {
-                Console.WriteLine("What is the name of the file that you will like to load?")
+                Console.WriteLine("What is the name of the file that you will like to load?");
                 journal._fileName = Console.ReadLine();
                 journal.LoadFile();
             }
