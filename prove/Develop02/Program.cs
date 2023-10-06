@@ -1,15 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace
-{
-    class Program
-    {
-        static void Main(string[] arags)
-        {
-            Console.ReadLine();
-        }
-    }
-}
+
  Journal journal = new Journal();
 
 
