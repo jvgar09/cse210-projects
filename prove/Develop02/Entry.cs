@@ -10,4 +10,3 @@ public class Entry {
         Console.WriteLine($"Date: {_date} - Prompt: {_prompt}\n{_answer}\n");
     }
 }
-
