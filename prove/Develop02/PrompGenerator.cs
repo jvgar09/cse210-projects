@@ -26,7 +26,7 @@ public class PromptGenerator
     }
     public string Display()
     {
-        int index = _random.Next{0, _prompts.Length};
+        int index = _random.Next(0, _prompts.Length);
         return _prompts[index];
     }
 
