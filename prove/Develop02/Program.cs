@@ -19,7 +19,7 @@ class Program
             option = int.Parse(Console.ReadLine());
             if (option < 1 || option > 5)
             {
-                Console.WriteLine{"Please choose a number between 1-5."};
+                Console.WriteLine{"Please choose a number between 1 and 5."};
             }
             else if (option == 1)
             {
