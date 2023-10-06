@@ -27,7 +27,7 @@ class Program
                 PromptGenerator promptGenerator = new PromptGenerator();
                 DateTime currentDate = DateTime.Now;
 
-                entry,_date = currentDate.ToShortDateString();
+                entry._date = currentDate.ToShortDateString();
                 entry._prompt = promptGenerator.Display();
                 Console.WriteLine(entry._date);
                 Console.WriteLine(entry._prompt);
