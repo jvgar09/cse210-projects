@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
   
 Journal journal = new Journal();
 
-option =  1
+option =  1;
 Random rand = Random();
 
 while (option != 5);
