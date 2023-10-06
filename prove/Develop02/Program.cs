@@ -1,8 +1,16 @@
 using System.Runtime.InteropServices;
-using System.IO;
 
-
-Journal journal = new Journal();
+namespace
+{
+    class Program
+    {
+        static void Main(string[] arags)
+        {
+            Console.ReadLine();
+        }
+    }
+}
+ Journal journal = new Journal();
 
 
 while (true)
