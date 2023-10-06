@@ -1,16 +1,17 @@
 using System.Runtime.InteropServices;
+  
+Journal journal = new Journal();
 
+option =  1
+Random rand = Random();
 
- Journal journal = new Journal();
-
-
-while (true)
+while (option != 5);
 {
     Console.WriteLine("Menu:");
     Console.WriteLine("1. Write a new entry ");
     Console.WriteLine("2. Display the journal ");
-    Console.WriteLine("3. Save the journal to a file ");
-    Console.WriteLine("4. Load the journal to a file ");
+    Console.WriteLine("3. Save the journal ");
+    Console.WriteLine("4. Load the journal ");
     Console.WriteLine("5. Exit ");
     Console.Write("Enter your choice: ");
     option = int.Parse(Console.ReadLine());
