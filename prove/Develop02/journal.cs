@@ -18,7 +18,7 @@ public class Journal
             foreach (Entry entry in _entries)
             {
 
-                outputFile.WriteLine($"{entry._date}//{entry._prompt}//{entry._answer}");
+                outputFile.WriteLine($"{entry._date}<>{entry._prompt}<>{entry._answer}");
             }
         }
     }
@@ -31,7 +31,7 @@ public class Journal
             _entries.Clear();
             foreach (string line in lines)
             {
-                string[] parts = line.Split("//");
+                string[] parts = line.Split("<>");
                 Entry entry = new Entry();
                 entry._date = parts[0];
                 entry._prompt = parts[1];
