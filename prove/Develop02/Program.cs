@@ -13,7 +13,7 @@ class Program
 
         while (option != 5)
         {
-            
+            Console.WriteLine("Welcome to the Journal Program!\n");
             Console.WriteLine( "Please choose a number between 1 and 5.");
             Console.WriteLine("1. Write a new entry ");
             Console.WriteLine("2. Display the journal ");
