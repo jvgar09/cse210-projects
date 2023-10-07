@@ -22,9 +22,7 @@ class Program
             Console.WriteLine("5. Exit ");
             Console.Write("Enter your choice: ");
             option = int.Parse(Console.ReadLine());
-            
-  
-            
+                     
             if (option == 1)
             {
                 Entry entry = new Entry();
