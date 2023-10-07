@@ -1,5 +1,6 @@
 using System;
-public class Journal {
+public class Journal 
+{
     public List<Entry> _entries = new List<Entry>();
     public string _fileName;
 
@@ -36,9 +37,7 @@ public class Journal {
                 entry._prompt = parts[1];
                 entry._answer = parts[2];
                 _entries.Add(entry);
-
             }
-
         }
         else
         {
