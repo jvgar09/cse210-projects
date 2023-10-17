@@ -16,7 +16,7 @@ public class Scripture
     public void Display()
     {
         Console.Clear();
-        Console.WriteLine($"Scripture Reference: {Reference.Book} {Reference.Chapter}:{Reference.VerseStart}-{Reference.VerseEnd}\n");
+        Console.WriteLine($"Memorize this Scripture: {Reference.Book} {Reference.Chapter}:{Reference.VerseStart}-{Reference.VerseEnd}\n");
 
         foreach (var word in words)
         {
