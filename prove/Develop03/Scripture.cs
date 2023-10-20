@@ -18,9 +18,9 @@ public class Scripture
         Console.Clear();
         Console.WriteLine($"Memorize this Scripture: {Reference.Book} {Reference.Chapter}:{Reference.VerseStart}-{Reference.VerseEnd}\n");
 
-        foreach (var word in words)
+        foreach (Word word in words)
         {
-            Console.Write(word.IsHidden ? "____ " : $"{word.Text} ");
+            Console.Write(word.IsHidden ? $"{word.HiddenText} " : $"{word.Text} ");
         }
 
         Console.WriteLine("\n");
