@@ -16,7 +16,10 @@ public class Program
                 {"Reference", "1 Nephi 3:6-7"}}},
             {2, new Dictionary<string, string> {
                 {"Text", "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."},
-                {"Reference", "Proverbs 3:5-6"}}}
+                {"Reference", "Proverbs 3:5-6"}}},
+            {3, new Dictionary<string, string> {
+                {"Text", "And verily I say unto thee that thou shalt lay aside the athings of this bworld, and cseek for the things of a dbetter."},
+                {"Reference", "D&C 25:10"}}}
         };
        
         int key = 1;//rnd.Next(1, scriptures.Count);
