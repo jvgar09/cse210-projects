@@ -13,10 +13,10 @@ public class Program
         {
             {1, new Dictionary<string, string> {
                 {"Text", "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto  the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them."},
-                {"Reference", "1 Nephi 3:7-9"}}},
+                {"Reference", "1 Nephi 3:7"}}},
             {2, new Dictionary<string, string> {
-                {"Text", "..."},
-                {"Reference", "..."}}}
+                {"Text", "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."},
+                {"Reference", "Proverbs 3:5-6"}}}
         };
        
         int key = 1;//rnd.Next(1, scriptures.Count);
