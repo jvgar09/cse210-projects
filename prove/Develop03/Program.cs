@@ -20,7 +20,8 @@ public class Program
         };
        
         int key = 1;//rnd.Next(1, scriptures.Count);
-        Scripture scripture = new Scripture(scriptures[key]["Reference"], scriptures[key]["Text"]);
+        Scripture scripture = new Scripture(scriptures[key]["Reference"],       
+        scriptures[key]["Text"]);
 
         while (true)
         {
