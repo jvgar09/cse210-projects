@@ -22,7 +22,7 @@ public class Program
                 {"Reference", "D&C 25:10"}}}
         };
        
-        int key = 1;//rnd.Next(1, scriptures.Count);
+        int key = 1; rnd.Next(1, scriptures.Count);
         Scripture scripture = new Scripture(scriptures[key]["Reference"],       
         scriptures[key]["Text"]);
 
