@@ -18,4 +18,4 @@ class BreathingActivity : MindfullActivity
         }
     }
 }
-
+    

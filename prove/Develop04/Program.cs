@@ -1,4 +1,5 @@
-using System; 
+using System;
+using System.IO.Pipes;
 using System.Threading; 
 
 class Program
@@ -62,7 +63,7 @@ class Program
 class ConsoleSpinner
 {
     private int counter;
-    private string[] symbols = { "|", "/", "-", "\\" };
+    private string[] symbols = {"=>   ", "==>  ", "===> ", "====>"};
     private Timer timer;
 
     public void StartSpinner(int delay = 100)
