@@ -17,7 +17,7 @@ class MindfullActivity
 
     public void Start()
     {
-        Console.WriteLine($"Starting {GetActivityName()} activity...");
+        Console.WriteLine($"Starting {GetActivityName()} activity...\n");
         Thread.Sleep(5000); // Pause for 5 seconds
     }
 

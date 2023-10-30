@@ -62,10 +62,10 @@ class Program
 class ConsoleSpinner
 {
     private int counter;
-    private string[] symbols = { "/", "-", "\\", "|" };
+    private string[] symbols = { "|", "/", "-", "\\" };
     private Timer timer;
 
-    public void StartSpinner(int delay = 250)
+    public void StartSpinner(int delay = 100)
     {
         timer = new Timer(UpdateSpinner, null, 0, delay);
     }
@@ -78,8 +78,14 @@ class ConsoleSpinner
     private void UpdateSpinner(object state)
     {
         Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop);
+
+        // Clear the previous frame
+        Console.Write(new string(' ', symbols[counter].Length));
+
+        // Write the next frame
+        Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop);
         Console.Write(symbols[counter]);
+
         counter = (counter + 1) % symbols.Length;
     }
 }
-
