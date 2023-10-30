@@ -1,5 +1,5 @@
 
-class BreathingActivity : MindfulnessActivity
+class BreathingActivity : MindfullActivity
 {
     public override string GetActivityName()
     {

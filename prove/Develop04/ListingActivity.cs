@@ -1,4 +1,4 @@
-class ListingActivity : MindfulnessActivity
+class ListingActivity : MindfullActivity
 {
     private string[] listPrompts = {
         "Who are people that you appreciate?",

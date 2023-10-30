@@ -17,17 +17,17 @@ class Program
 
             if (choice == "1")
             {
-                MindfulnessActivity activity = new BreathingActivity();
+                MindfullActivity activity = new BreathingActivity();
                 ActivityMenu(activity);
             }
             else if (choice == "2")
             {
-                MindfulnessActivity activity = new ReflectionActivity();
+                MindfullActivity activity = new ReflectionActivity();
                 ActivityMenu(activity);
             }
             else if (choice == "3")
             {
-                MindfulnessActivity activity = new ListingActivity();
+                MindfullActivity activity = new ListingActivity();
                 ActivityMenu(activity);
             }
             else if (choice == "4")
@@ -42,7 +42,7 @@ class Program
         }
     }
 
-    static void ActivityMenu(MindfulnessActivity activity)
+    static void ActivityMenu(MindfullActivity activity)
     {
         int duration;
         Console.Write("Enter the duration (in seconds): \n");

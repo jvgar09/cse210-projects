@@ -1,10 +1,10 @@
 
-class MindfulnessActivity
+class MindfullActivity
 {
     protected int duration;
     public ConsoleSpinner spinner;
 
-    public MindfulnessActivity()
+    public MindfullActivity()
     {
         duration = 0;
         spinner = new ConsoleSpinner();
