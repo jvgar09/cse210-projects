@@ -18,14 +18,14 @@ class MindfullActivity
     public void Start()
     {
         Console.WriteLine($"Starting {GetActivityName()} activity...\n");
-        Thread.Sleep(5000); // Pause for 5 seconds
+        Thread.Sleep(2000); // Pause for 2 seconds
     }
 
     public void End()
     {
         Console.WriteLine($"Great job! You've completed the {GetActivityName()} activity.\n");
         Console.WriteLine($"Total time: {duration} seconds");
-        Thread.Sleep(5000); // Pause for 5 seconds
+        Thread.Sleep(2000); // Pause for 2 seconds
     }
 
     public virtual string GetActivityName()

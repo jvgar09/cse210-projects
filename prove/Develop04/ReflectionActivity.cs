@@ -31,12 +31,12 @@ class ReflectionActivity : MindfullActivity
         Console.WriteLine("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.\n");
         string prompt = prompts[new Random().Next(prompts.Length)];
         Console.WriteLine($"Prompt: {prompt}");
-        Thread.Sleep(5000); // Pause for 5 seconds
+        Thread.Sleep(2000); // Pause for 2 seconds
         spinner.StartSpinner();
         foreach (string question in reflectionQuestions)
         {
             Console.WriteLine(question);
-            Thread.Sleep(4000); // Pause for 4 seconds
+            Thread.Sleep(2000); // Pause for 2 seconds
         }
         spinner.StopSpinner();
     }

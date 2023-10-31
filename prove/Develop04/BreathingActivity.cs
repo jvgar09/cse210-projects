@@ -12,9 +12,9 @@ class BreathingActivity : MindfullActivity
         for (int i = 0; i < duration; i++)
         {
             Console.WriteLine("Breathe in...");
-            Thread.Sleep(3000); // Pause for 3 second
+            Thread.Sleep(2000); // Pause for 2 second
             Console.WriteLine("Breathe out...");
-            Thread.Sleep(3000); // Pause for 3 second
+            Thread.Sleep(2000); // Pause for 2 second
         }
     }
 }
