@@ -1,21 +1,25 @@
+using System.ComponentModel;
 
 class BreathingActivity : MindfullActivity
 {
-    public override string GetActivityName()
+    public BreathingActivity(int duration) : base(duration)
     {
-        return "Breathing";
+        name = "Breathing Activity";
+        description = "This activity will help you relax by guiding you through deep breathing. Clear your mind and focus on your breathing.\n";
     }
 
-    public override void Execute()
+    public void Execute()
     {
-        Console.WriteLine("This activity will help you relax by guiding you through deep breathing. Clear your mind and focus on your breathing.\n");
-        for (int i = 0; i < duration; i++)
+        Start();
+        DateTime stop = DateTime.Now.AddSeconds(duration);
+        while(DateTime.Now < stop)
         {
             Console.WriteLine("Breathe in...");
-            Thread.Sleep(2000); // Pause for 2 second
+            Timer(2); // Pause for 2 second
             Console.WriteLine("Breathe out...");
-            Thread.Sleep(2000); // Pause for 2 second
+            Timer(2); // Pause for 2 second
         }
+        End();
     }
 }
     

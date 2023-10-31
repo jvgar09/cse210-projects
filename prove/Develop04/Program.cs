@@ -6,6 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        int duration;
         while (true)
         {
             Console.WriteLine("Mindfulness Activities Menu:");
@@ -18,18 +19,21 @@ class Program
 
             if (choice == "1")
             {
-                MindfullActivity activity = new BreathingActivity();
-                ActivityMenu(activity);
+                duration = GetDuration();
+                BreathingActivity activity = new BreathingActivity(duration);
+                activity.Execute();
             }
             else if (choice == "2")
             {
-                MindfullActivity activity = new ReflectionActivity();
-                ActivityMenu(activity);
+                duration = GetDuration();
+                ReflectionActivity activity = new ReflectionActivity(duration);
+                activity.Execute();
             }
             else if (choice == "3")
             {
-                MindfullActivity activity = new ListingActivity();
-                ActivityMenu(activity);
+                duration = GetDuration();
+                ListingActivity activity = new ListingActivity(duration);
+                activity.Execute();
             }
             else if (choice == "4")
             {
@@ -43,50 +47,17 @@ class Program
         }
     }
 
-    static void ActivityMenu(MindfullActivity activity)
+    static int GetDuration()
     {
         int duration;
-        Console.Write("Enter the duration (in seconds): \n");
-        if (int.TryParse(Console.ReadLine(), out duration))
+        do
         {
-            activity.SetDuration(duration);
-            activity.Run();
+            Console.Write("Enter the duration (in seconds): \n");
+            duration = int.Parse(Console.ReadLine());
+            if(duration <= 0)
+                Console.WriteLine("Invalid input. Please enter a valid duration.");
         }
-        else
-        {
-            Console.WriteLine("Invalid input. Please enter a valid duration.");
-        }
-    }
-}
-
-
-class ConsoleSpinner
-{
-    private int counter;
-    private string[] symbols = {"=>   ", "==>  ", "===> ", "====>"};
-    private Timer timer;
-
-    public void StartSpinner(int delay = 100)
-    {
-        timer = new Timer(UpdateSpinner, null, 0, delay);
-    }
-
-    public void StopSpinner()
-    {
-        timer.Change(Timeout.Infinite, Timeout.Infinite);
-    }
-
-    private void UpdateSpinner(object state)
-    {
-        Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop);
-
-        // Clear the previous frame
-        Console.Write(new string(' ', symbols[counter].Length));
-
-        // Write the next frame
-        Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop);
-        Console.Write(symbols[counter]);
-
-        counter = (counter + 1) % symbols.Length;
+        while(duration <= 0);
+        return duration;
     }
 }

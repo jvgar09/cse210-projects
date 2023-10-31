@@ -2,46 +2,53 @@
 class MindfullActivity
 {
     protected int duration;
-    public ConsoleSpinner spinner;
+    protected string name;
+    protected string description;
+    private string[] symbols = {"=>   ", "==>  ", "===> ", "====>"};
 
-    public MindfullActivity()
+    public MindfullActivity(int duration)
     {
-        duration = 0;
-        spinner = new ConsoleSpinner();
-    }
-
-    public void SetDuration(int seconds)
-    {
-        duration = seconds;
+        this.duration = duration;
     }
 
     public void Start()
     {
-        Console.WriteLine($"Starting {GetActivityName()} activity...\n");
-        Thread.Sleep(2000); // Pause for 2 seconds
+        Console.WriteLine($"Starting {name}...\n");
+        Console.WriteLine(description);
+        Console.Write("\nGet Ready ");
+        Spinner(5);
     }
 
     public void End()
     {
-        Console.WriteLine($"Great job! You've completed the {GetActivityName()} activity.\n");
+        Console.WriteLine($"Great job! You've completed the {name}.\n");
         Console.WriteLine($"Total time: {duration} seconds");
-        Thread.Sleep(2000); // Pause for 2 seconds
+        Spinner(5);
     }
 
-    public virtual string GetActivityName()
+    public void Timer(int duration)
     {
-        return "Mindfulness";
+        for(int i = duration; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            
+        }
     }
 
-    public void Run()
+    public void Spinner(int duration)
     {
-        Start();
-        Execute();
-        End();
-    }
-
-    public virtual void Execute()
-    {
-        // Common execution logic
+        for(int _ = duration; _ > 0; _--)
+        {
+            foreach(string frame in symbols)
+            {
+                Console.Write(frame);
+                Thread.Sleep(250);
+                for(int x = 5; x > 0; x--)
+                {
+                    Console.Write("\b \b");
+                }
+            }
+        }
     }
 }

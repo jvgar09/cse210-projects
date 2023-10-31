@@ -21,23 +21,22 @@ class ReflectionActivity : MindfullActivity
         "How did this make you feel."
     };
 
-    public override string GetActivityName()
+    public ReflectionActivity(int duration) : base(duration)
     {
-        return "Reflection";
+        name = "Reflecting Activity";
+        description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.\n";
     }
 
-    public override void Execute()
+    public void Execute()
     {
-        Console.WriteLine("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.\n");
         string prompt = prompts[new Random().Next(prompts.Length)];
         Console.WriteLine($"Prompt: {prompt}");
-        Thread.Sleep(2000); // Pause for 2 seconds
-        spinner.StartSpinner();
+        // PUT "When you have something in mind press enter to continue"
+        // GET input
         foreach (string question in reflectionQuestions)
         {
             Console.WriteLine(question);
-            Thread.Sleep(2000); // Pause for 2 seconds
+            Spinner(5);
         }
-        spinner.StopSpinner();
     }
 }
