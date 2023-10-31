@@ -21,5 +21,5 @@ class BreathingActivity : MindfullActivity
     }
 }
     
-//Console.Write("Hit enter when done...");
+
 //using System.ComponentModel;
