@@ -1,4 +1,3 @@
-
 class MindfullActivity
 {
     protected int duration;

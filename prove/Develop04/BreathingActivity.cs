@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 class BreathingActivity : MindfullActivity
 {
     public BreathingActivity(int duration) : base(duration)
@@ -23,3 +21,5 @@ class BreathingActivity : MindfullActivity
     }
 }
     
+//Console.Write("Hit enter when done...");
+//using System.ComponentModel;
