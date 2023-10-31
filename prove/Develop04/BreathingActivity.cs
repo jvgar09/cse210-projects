@@ -12,9 +12,9 @@ class BreathingActivity : MindfullActivity
         DateTime stop = DateTime.Now.AddSeconds(duration);
         while(DateTime.Now < stop)
         {
-            Console.WriteLine("Breathe in...");
+            Console.WriteLine("Breathe in... ");
             Timer(2); // Pause for 2 second
-            Console.WriteLine("Breathe out...");
+            Console.WriteLine("Breathe out... ");
             Timer(2); // Pause for 2 second
         }
         End();

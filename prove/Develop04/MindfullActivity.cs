@@ -15,14 +15,14 @@ class MindfullActivity
         Console.WriteLine($"Starting {name}...\n");
         Console.WriteLine(description);
         Console.Write("\nGet Ready ");
-        Spinner(5);
+        Spinner(6);
     }
 
     public void End()
     {
         Console.WriteLine($"Great job! You've completed the {name}.\n");
         Console.WriteLine($"Total time: {duration} seconds");
-        Spinner(5);
+        Spinner(6);
     }
 
     public void Timer(int duration)
@@ -30,7 +30,7 @@ class MindfullActivity
         for(int i = duration; i > 0; i--)
         {
             Console.Write(i);
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             
         }
     }
