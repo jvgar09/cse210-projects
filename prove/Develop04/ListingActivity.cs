@@ -21,7 +21,6 @@ class ListingActivity : MindfullActivity
         Console.WriteLine($"Prompt: {prompt}");
         Thread.Sleep(2000); // Pause for 2 seconds
         Console.WriteLine("Start listing items...");
-        Console.Write("Hit enter when done listing...");
         int itemCounter = 0;
         while (itemCounter < duration)
         {
