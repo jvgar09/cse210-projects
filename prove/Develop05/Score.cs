@@ -2,6 +2,7 @@
 // Base class for all goals
 public abstract class Goal
 {
+
     private string name;
     private int points;
     protected int completionCount;

@@ -25,6 +25,7 @@ public class User
     {
         foreach (var goal in goals)
         {
+    
             Console.WriteLine($"{goal.GetProgress()} {goal.Name} - {goal.Points} points");
         }
 
