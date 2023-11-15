@@ -25,28 +25,32 @@ class Program
             Console.WriteLine("2. Eternal Goals");
             Console.WriteLine("3. Checklist Goals");
             Console.WriteLine("Which type of goal would you like to create? ");  
+            Console.ReadLine();
             }
             else if (option == "2")
             {               
             Console.WriteLine(" The goals are:");
-            SimpleGoal Goal = new SimpleGoal;
-            EternalGoal Goal = new EternalGoal;
-            ChecklistGoal Goal = new ChecklistGoal;
-            Goal.Execute();
+            //SimpleGoal Goal = new SimpleGoal;
+            //EternalGoal Goal = new EternalGoal;
+            //ChecklistGoal Goal = new ChecklistGoal;
+            Console.ReadLine();
 
             }
             else if (option == "3")
             {               
             Console.WriteLine("What is the filename for the goal file?");
+            Console.ReadLine();
 
             }
             else if (option == "4")
             {               
             Console.WriteLine(" Which goals would you like to Load:");
+            Console.ReadLine();
             }
             else if (option == "5")
             {               
             Console.WriteLine(" What goal did you accomplish?:"); 
+            Console.ReadLine();
             }
             else if (option == "6")
             {
