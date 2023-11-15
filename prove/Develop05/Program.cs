@@ -3,26 +3,47 @@ using System.Collections.Generic;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        User user = new User();
+        while (true)
+        {
+            Console.WriteLine(" Menu Options:");
+            Console.WriteLine("1. Create New Goal");
+            Console.WriteLine("2. List Goals");
+            Console.WriteLine("3. Save Goals");
+            Console.WriteLine("4. Load Goals");
+            Console.WriteLine("5. Record Event");
+            Console.WriteLine("6. Quit");
+            Console.Write("Select a Choice from the menu: ");
+            string choice = Console.ReadLine();
 
-        // Sample goals
-        Goal marathonGoal = new SimpleGoal("Run a Marathon", 1000);
-        Goal readScripturesGoal = new EternalGoal("Read Scriptures", 100);
-        Goal attendTempleGoal = new ChecklistGoal("Attend Temple", 50, 10);
-
-        user.AddGoal(marathonGoal);
-        user.AddGoal(readScripturesGoal);
-        user.AddGoal(attendTempleGoal);
-
-        // Record events
-        user.RecordEvent(marathonGoal);
-        user.RecordEvent(readScripturesGoal);
-        user.RecordEvent(attendTempleGoal);
-        user.RecordEvent(attendTempleGoal); // Record multiple times for checklist goal
-
-        // Display goals and score
-        user.DisplayGoals();
+            if (choice == "1")
+            {  
+            Console.WriteLine(" The types of goals are:");
+            Console.WriteLine("1. Simple Goal");
+            Console.WriteLine("2. Eternal Goals");
+            Console.WriteLine("3. Checklist Goals");
+            Console.WriteLine("Which type of goal would you like to create? ");
+    
+            }
+            else if (choice == "2")
+            {               
+              
+            }
+            else if (choice == "3")
+            {               
+                
+            }
+            else if (choice == "4")
+            {
+            Console.WriteLine("Goodbye!");
+            break;
+            }
+            else
+            {
+            Console.WriteLine("Invalid choice. Please select a valid option.\n");
+            }
+        }
     }
 }
+

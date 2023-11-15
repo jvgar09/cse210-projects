@@ -1,33 +1,36 @@
-// User class to manage goals and score
-public class User
+
+// Base class for all goals
+public abstract class Goal
 {
-    public List<Goal> Goals { get; private set; }
-    public int Score { get; private set; }
+    private string name;
+    private int points;
+    protected int completionCount;
+    protected bool isCompleted;
 
-    public User()
+    public string Name
     {
-        Goals = new List<Goal>();
-        Score = 0;
+        get { return name; }
     }
 
-    public void AddGoal(Goal goal)
+    public int Points
     {
-        Goals.Add(goal);
+        get { return points; }
     }
 
-    public void RecordEvent(Goal goal)
+    public bool IsCompleted
     {
-        goal.RecordEvent();
-        Score += goal.Points;
+        get { return isCompleted; }
     }
 
-    public void DisplayGoals()
+    protected Goal(string name, int points)
     {
-        foreach (var goal in Goals)
-        {
-            Console.WriteLine($"{goal.GetProgress()} {goal.Name} - {goal.Points} points");
-        }
-
-        Console.WriteLine($"Total Score: {Score} points");
+        this.name = name;
+        this.points = points;
+        completionCount = 0;
+        isCompleted = false;
     }
+
+    public abstract void RecordEvent();
+    public abstract string GetProgress();
 }
+

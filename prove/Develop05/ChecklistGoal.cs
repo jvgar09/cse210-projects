@@ -3,14 +3,10 @@
 public class ChecklistGoal : Goal
 {
     private int completionTarget;
-    private int completionCount;
 
-    public ChecklistGoal(string name, int points, int target)
+    public ChecklistGoal(string name, int points, int target) : base(name, points)
     {
-        Name = name;
-        Points = points;
         completionTarget = target;
-        completionCount = 0;
     }
 
     public override void RecordEvent()
@@ -20,7 +16,7 @@ public class ChecklistGoal : Goal
 
         if (completionCount == completionTarget)
         {
-            IsCompleted = true;
+            isCompleted = true;
             Console.WriteLine($"Congratulations! You completed the checklist goal {Name} and earned a bonus of {Points * 2} points.");
         }
     }
@@ -30,4 +26,3 @@ public class ChecklistGoal : Goal
         return $"Completed {completionCount}/{completionTarget} times";
     }
 }
-

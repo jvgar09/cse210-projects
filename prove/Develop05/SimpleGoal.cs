@@ -1,17 +1,13 @@
 // Simple goal class
 public class SimpleGoal : Goal
 {
-    public SimpleGoal(string name, int points)
-    {
-        Name = name;
-        Points = points;
-    }
+    public SimpleGoal(string name, int points) : base(name, points) { }
 
     public override void RecordEvent()
     {
-        if (!IsCompleted)
+        if (!isCompleted)
         {
-            IsCompleted = true;
+            isCompleted = true;
             Console.WriteLine($"Congratulations! You completed the {Name} goal and earned {Points} points.");
         }
         else
@@ -22,6 +18,7 @@ public class SimpleGoal : Goal
 
     public override string GetProgress()
     {
-        return IsCompleted ? "[X]" : "[ ]";
+        return isCompleted ? "[X]" : "[ ]";
     }
 }
+
