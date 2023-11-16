@@ -1,0 +1,2 @@
+EternalGoal|walk|walk a mile|100
+0

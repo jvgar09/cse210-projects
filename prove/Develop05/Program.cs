@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
 
+
 class Program
 {
     static void Main(string[] args)
     {
+        User user = new();
         while (true)
         {
+            Console.WriteLine($"Total Score: {user.Score} points");
             Console.WriteLine(" Menu Options:");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
@@ -18,47 +21,38 @@ class Program
             string option = Console.ReadLine();
 
             if (option == "1")
-            {  
-            Console.WriteLine(" The types of goals are:");
-            Console.WriteLine("1. Simple Goal");
-            Console.WriteLine("2. Eternal Goals");
-            Console.WriteLine("3. Checklist Goals");
-            Console.WriteLine("Which type of goal would you like to create? ");  
-            Console.ReadLine();
+            {
+                user.AddGoal();
             }
             else if (option == "2")
-            {               
-            Console.WriteLine(" The goals are:");
-            //SimpleGoal Goal = new SimpleGoal;
-            //EternalGoal Goal = new EternalGoal;
-            //ChecklistGoal Goal = new ChecklistGoal;
-            Console.ReadLine();
-
+            {
+                user.DisplayGoals();
             }
             else if (option == "3")
-            {               
-            Console.WriteLine("What is the filename for the goal file?");
-            Console.ReadLine();
+            {
+                Console.Write("What is the filename for the goal file?");
+                string path = Console.ReadLine();
+                user.Save(path);
 
             }
             else if (option == "4")
-            {               
-            Console.WriteLine(" Which goals would you like to Load:");
-            Console.ReadLine();
+            {
+                Console.Write("What is the filename for the goal file?");
+                string path = Console.ReadLine();
+                user.Load(path);
             }
             else if (option == "5")
-            {               
-            Console.WriteLine(" What goal did you accomplish?:"); 
-            Console.ReadLine();
+            {
+                user.RecordEvent();
             }
             else if (option == "6")
             {
-            Console.WriteLine("Goodbye!");
-            break;
+                Console.WriteLine("Goodbye!");
+                break;
             }
             else
             {
-            Console.WriteLine("Invalid option. Please select a valid option.\n");
+                Console.WriteLine("Invalid option. Please select a valid option.\n");
             }
         }
     }

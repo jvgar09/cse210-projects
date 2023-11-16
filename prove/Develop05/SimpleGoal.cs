@@ -1,24 +1,31 @@
+using System;
+
 // Simple goal class
 public class SimpleGoal : Goal
 {
-    public SimpleGoal(string name, int points) : base(name, points) { }
+    public SimpleGoal(string name, string description, int points) : base(name, description, points) { }
+    public SimpleGoal(string name, string description, int points, bool isCompleted) : base(name, description, points, isCompleted) { }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        if (!isCompleted)
+        if (!_isCompleted)
         {
-            isCompleted = true;
+            _isCompleted = true;
             Console.WriteLine($"Congratulations! You completed the {Name} goal and earned {Points} points.");
+            return _points;
         }
         else
         {
             Console.WriteLine($"You've already completed the {Name} goal.");
+            return 0;
         }
     }
 
-    public override string GetProgress()
+    public override string GetSaveString()
     {
-        return isCompleted ? "[X]" : "[ ]";
+        return $"{base.GetSaveString()}|{_isCompleted}";
     }
+
+
 }
 

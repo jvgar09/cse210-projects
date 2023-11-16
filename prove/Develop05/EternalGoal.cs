@@ -1,16 +1,26 @@
 // Eternal goal class
 public class EternalGoal : Goal
 {
-    public EternalGoal(string name, int points) : base(name, points) { }
-
-    public override void RecordEvent()
+    private int _completionCount;
+    public EternalGoal(string name, string description, int points) : base(name, description, points)
     {
-        completionCount++;
-        Console.WriteLine($"You recorded an event for the eternal goal {Name} and earned {Points} points.");
+        _completionCount = 0;
     }
 
-    public override string GetProgress()
+    public EternalGoal(string name, string description, int points, int completionCount) : base(name, description, points)
     {
-        return $"Completed {completionCount} times";
+        _completionCount = completionCount;
+    }
+
+    public override int RecordEvent()
+    {
+        _completionCount++;
+        Console.WriteLine($"You recorded an event for the eternal goal {Name} and earned {Points} points.");
+        return _points;
+    }
+
+    public override string Display()
+    {
+        return $"{base.Display()}\n\tCompleted: {_completionCount} times";
     }
 }

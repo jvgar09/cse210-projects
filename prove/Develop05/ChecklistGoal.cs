@@ -2,27 +2,56 @@
 // Checklist goal class
 public class ChecklistGoal : Goal
 {
-    private int completionTarget;
+    private int _completionTarget;
+    private int _completionCount;
+    private int _bonus;
 
-    public ChecklistGoal(string name, int points, int target) : base(name, points)
+    //constructor 
+    public ChecklistGoal(string name, string description, int points, int target, int bonus) : base(name, description, points)
     {
-        completionTarget = target;
+        _completionTarget = target;
+        _completionCount = 0;
+        _bonus = bonus;
+    }
+    public ChecklistGoal(string name, string description, int points, bool isCompleted, int count, int target, int bonus) : base(name, description, points, isCompleted)
+    {
+        _completionTarget = target;
+        _completionCount = count;
+        _bonus = bonus;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        completionCount++;
-        Console.WriteLine($"You recorded an event for the checklist goal {Name} and earned {Points} points.");
+        _completionCount++;
 
-        if (completionCount == completionTarget)
+        if (!_isCompleted)
         {
-            isCompleted = true;
-            Console.WriteLine($"Congratulations! You completed the checklist goal {Name} and earned a bonus of {Points * 2} points.");
+            if (_completionCount == _completionTarget)
+            {
+                _isCompleted = true;
+                Console.WriteLine($"Congratulations! You completed the checklist goal {_name} and earned a bonus of {_points + _bonus} points.");
+                return _points + _bonus;
+            }
+            else
+            {
+                Console.WriteLine($"You recorded an event for the checklist goal {_name} and earned {_points} points.");
+                return _points;
+            }
+        }
+        else
+        {
+            Console.WriteLine("This goal has already been completed!");
+            return 0;
         }
     }
 
-    public override string GetProgress()
+    public override string Display()
     {
-        return $"Completed {completionCount}/{completionTarget} times";
+        return $"{base.Display()}\n\tCompleted: [{_completionCount}/{_completionTarget}] times";
+    }
+
+    public override string GetSaveString()
+    {
+        return $"{base.GetSaveString()}|{_isCompleted}|{_completionCount}|{_completionTarget}|{_bonus}";
     }
 }
