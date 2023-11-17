@@ -159,12 +159,11 @@ public class User
                     string description = parts[2];
                     int points = int.Parse(parts[3]);
 
-                    EternalGoal eternal = new(parts[1], parts[2], parts[3], parts[4]);
+                    EternalGoal eternal = new (parts[1], parts[2], parts[3], parts[4]);
 
                     break;
 
                 case "ChecklistGoal":
-
 
                     string name = parts[1];
                     string description = parts[2];
