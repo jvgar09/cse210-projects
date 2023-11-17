@@ -138,7 +138,7 @@ public class User
             {
                 case "Score":
 
-                    string _score = parts[1];
+                    _score = parts[1];
 
                     break;
 
