@@ -135,6 +135,11 @@ public class User
         {
             string[] parts = line.Split("|");
 
+            //if (parts[0] == "Score");
+            //{
+            //    int _score = parts[1];
+            //}
+
             if (parts[0] == "Simple")
             {
                 string name = parts[1];
