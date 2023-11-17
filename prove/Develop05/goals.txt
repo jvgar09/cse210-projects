@@ -1,2 +1,4 @@
 EternalGoal|walk|walk a mile|100
 0
+EternalGoal|go to th temple|go to the temple 12 times a year|10
+0

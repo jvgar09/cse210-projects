@@ -1,14 +1,13 @@
 using System;
-using System.Runtime.CompilerServices;
-using System.Security.Authentication.ExtendedProtection;
-using System.Threading.Channels;
+//using System.Runtime.CompilerServices;
+//using System.Security.Authentication.ExtendedProtection;
+//using System.Threading.Channels;
 
 // Base class for all goals
 public abstract class Goal
 {
-    
     protected string _name;
-    private string _description; 
+    protected string _description; 
     protected int _points;
     protected bool _isCompleted;
 
@@ -63,11 +62,6 @@ public abstract class Goal
     {
         return $"{GetType()}|{_name}|{_description}|{_points}";
     }
-
-
-
-    
-
 
 }
 

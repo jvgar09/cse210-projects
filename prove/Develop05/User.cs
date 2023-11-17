@@ -1,5 +1,9 @@
+using System; 
+using System.Collections;
+using System.ComponentModel;
 
 // User class to manage goals and score
+
 public class User
 {
     private List<Goal> _goals;
@@ -100,7 +104,7 @@ public class User
 
     public void Save(string path)
     {
-        Console.WriteLine("Savig file name...");
+        Console.WriteLine("Savng file name...");
         try
         {
             using (StreamWriter outputFile = new StreamWriter(path, true))
@@ -116,29 +120,74 @@ public class User
         }
         catch
         {
-            Console.WriteLine("Unale to save file.");
+            Console.WriteLine("Unable to save file.");
         }
 
     }
 
 
-
     public void Load(string path)
     {
-        //  string[] lines = File.ReadAllLines( path )
-        //  FOREACH line in lines
-        //      string[] parts = line.Split("|")
-        //      SWITCH parts[0]
-        //          CASE "Score"
-        //              _score = parts[1]
-        //          CASE "SimpleGoal"
-        //              Simple simple = new( parts[1], parts[2], parts[3], parts[4] )
-        //              BREAK
-        //          CASE "EternalGoal"
-        //              Eternal eternal = new( parts[1], parts[2], parts[3], parts[4] )
-        //              BREAK
-        //          CASE "ChecklistGoal"
-        //              Checklist checklist = new( parts[1], parts[2], parts[3], parts[4], parts[5], parts[5], parts[7] )
-        //              BREAK
+        _goals.Clear();
+        string[] lines = File.ReadAllLines(path);
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("|");
+
+            if (parts[0] == "Simple")
+            {
+                string name = parts[1];
+                string description = parts[2];
+                int points = int.Parse(parts[3]);
+                bool isComplete = bool.Parse(parts[4]);
+
+                SimpleGoal goal = new SimpleGoal(name, description, points, isComplete);
+                _goals.Add(goal);
+            }
+
+            else if  (parts[0] == "Eternal")
+            {
+                string name = parts[1];
+                string description = parts[2];
+                int points = int.Parse(parts[3]);
+
+                EternalGoal goal = new EternalGoal(name, description, points);
+                _goals.Add(goal);
+            }
+
+            else if (parts[0] == "Checklist")
+            {
+                string name = parts[1];
+                string description = parts[2];
+                int points = int.Parse(parts[3]);
+                bool isComplete = bool.Parse(parts[4]); 
+                int count = int.Parse(parts[5]);         
+                int target = int.Parse(parts[6]);
+                int bouns = int.Parse(parts[7]); 
+
+                ChecklistGoal goal = new ChecklistGoal(name, description, points, isComplete, count, target, bouns);
+                _goals.Add(goal);
+            }
+           
+        }
     }
 }
+
+
+
+            //      string[] lines = File.ReadAllLines(path);
+            //        foreach (string line in lines) 
+            //        string[] parts = line.Split("|");
+            //      SWITCH parts[0]
+            //          CASE "Score"
+            //              _score = parts[1]
+            //          CASE "SimpleGoal"
+            //              Simple simple = new( parts[1], parts[2], parts[3], parts[4] )
+            //              BREAK
+            //          CASE "EternalGoal"
+            //              Eternal eternal = new( parts[1], parts[2], parts[3], parts[4] )
+            //              BREAK
+            //          CASE "ChecklistGoal"
+            //              Checklist checklist = new( parts[1], parts[2], parts[3], parts[4], parts[5], parts[5], parts[7] )
+            //   BREAK

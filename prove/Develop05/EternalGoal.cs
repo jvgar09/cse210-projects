@@ -1,4 +1,4 @@
-// Eternal goal class
+// Eternal goal class - derived/sub class 
 public class EternalGoal : Goal
 {
     private int _completionCount;
