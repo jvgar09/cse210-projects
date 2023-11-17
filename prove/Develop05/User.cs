@@ -137,45 +137,40 @@ public class User
             switch (parts[0])
             {
                 case "Score":
-
-                    _score = parts[1];
-
+                    _score = int.Parse(parts[1]);
                     break;
 
                 case "SimpleGoal":
 
-                    string name = parts[1];
-                    string description = parts[2];
-                    int points = int.Parse(parts[3]);
-                    bool isComplete = bool.Parse(parts[4]);
+                    string simpleName = parts[1];
+                    string simpleDescription = parts[2];
+                    int simplePoints = int.Parse(parts[3]);
+                    bool simpleIsComplete = bool.Parse(parts[4]);
 
-                    SimpleGoal simple = new (parts[1], parts[2], parts[3], parts[4]);
-
+                    SimpleGoal simple = new SimpleGoal(simpleName, simpleDescription, simplePoints, simpleIsComplete);
                     break;
 
                 case "EternalGoal":
 
-                    string name = parts[1];
-                    string description = parts[2];
-                    int points = int.Parse(parts[3]);
+                    string eternalName = parts[1];
+                    string eternalDescription = parts[2];
+                    int eternalPoints = int.Parse(parts[3]);
 
-                    EternalGoal eternal = new (parts[1], parts[2], parts[3], parts[4]);
-
+                    EternalGoal eternal = new EternalGoal(eternalName, eternalDescription, eternalPoints);
                     break;
 
                 case "ChecklistGoal":
+                    string checklistName = parts[1];
+                    string checklistDescription = parts[2];
+                    int checklistPoints = int.Parse(parts[3]);
+                    bool checklistIsComplete = bool.Parse(parts[4]);
+                    int checklistCount = int.Parse(parts[5]);
+                    int checklistTarget = int.Parse(parts[6]);
+                    int checklistBonus = int.Parse(parts[7]);
 
-                    string name = parts[1];
-                    string description = parts[2];
-                    int points = int.Parse(parts[3]);
-                    bool isComplete = bool.Parse(parts[4]);
-                    int count = int.Parse(parts[5]);
-                    int target = int.Parse(parts[6]);
-                    int bouns = int.Parse(parts[7]);
-
-                    ChecklistGoal checklist = new(parts[1], parts[2], parts[3], parts[4], parts[5], parts[5], parts[7]);
-
+                    ChecklistGoal checklist = new ChecklistGoal(checklistName, checklistDescription, checklistPoints, checklistIsComplete, checklistCount, checklistTarget, checklistBonus);
                     break;
+
             }
 
         }
