@@ -134,11 +134,11 @@ public class User
         {
             string[] parts = line.Split("|");
 
-            switch parts[0]
+            switch (parts[0])
             {
                 case "Score":
 
-                    _score = parts[1];
+                    string _score = parts[1];
 
                     break;
 
@@ -149,7 +149,7 @@ public class User
                     int points = int.Parse(parts[3]);
                     bool isComplete = bool.Parse(parts[4]);
 
-                    SimpleGoal simple = new(parts[1], parts[2], parts[3], parts[4]);
+                    SimpleGoal simple = new (parts[1], parts[2], parts[3], parts[4]);
 
                     break;
 
