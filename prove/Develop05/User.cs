@@ -23,7 +23,6 @@ public class User
         Console.WriteLine("2. Eternal Goals");
         Console.WriteLine("3. Checklist Goals");
         Console.WriteLine("4. Money Goals");
-
         Console.Write("Which type of goal would you like to create? ");
 
         string goalType = Console.ReadLine();

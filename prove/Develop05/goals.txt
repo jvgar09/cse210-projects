@@ -2,3 +2,5 @@ SimpleGoal|run|run a mile per day|100|False
 EternalGoal|read the bom|read each day for a week|5
 ChecklistGoal|go to the temple|go to the temple 12 time per year|10|False|0|12|5
 0
+MoneyGoal|save money|save 100 each week|50|False
+0
