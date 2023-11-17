@@ -1,2 +1,0 @@
-SimpleGoal|run|rn a mile n 15 min|100|False
-0

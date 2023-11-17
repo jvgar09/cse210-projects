@@ -1,4 +1,4 @@
-using System; 
+using System;
 using System.Collections;
 using System.ComponentModel;
 
@@ -128,71 +128,58 @@ public class User
 
     public void Load(string path)
     {
-        _goals.Clear();
         string[] lines = File.ReadAllLines(path);
 
         foreach (string line in lines)
         {
             string[] parts = line.Split("|");
 
-            //if (parts[0] == "Score");
-            //{
-            //    int _score = parts[1];
-            //}
-
-            if (parts[0] == "Simple")
+            switch parts[0]
             {
-                string name = parts[1];
-                string description = parts[2];
-                int points = int.Parse(parts[3]);
-                bool isComplete = bool.Parse(parts[4]);
+                case "Score":
 
-                SimpleGoal goal = new SimpleGoal(name, description, points, isComplete);
-                _goals.Add(goal);
+                    _score = parts[1];
+
+                    break;
+
+                case "SimpleGoal":
+
+                    string name = parts[1];
+                    string description = parts[2];
+                    int points = int.Parse(parts[3]);
+                    bool isComplete = bool.Parse(parts[4]);
+
+                    SimpleGoal simple = new(parts[1], parts[2], parts[3], parts[4]);
+
+                    break;
+
+                case "EternalGoal":
+
+                    string name = parts[1];
+                    string description = parts[2];
+                    int points = int.Parse(parts[3]);
+
+                    EternalGoal eternal = new(parts[1], parts[2], parts[3], parts[4]);
+
+                    break;
+
+                case "ChecklistGoal":
+
+
+                    string name = parts[1];
+                    string description = parts[2];
+                    int points = int.Parse(parts[3]);
+                    bool isComplete = bool.Parse(parts[4]);
+                    int count = int.Parse(parts[5]);
+                    int target = int.Parse(parts[6]);
+                    int bouns = int.Parse(parts[7]);
+
+                    ChecklistGoal checklist = new(parts[1], parts[2], parts[3], parts[4], parts[5], parts[5], parts[7]);
+
+                    break;
             }
 
-            else if  (parts[0] == "Eternal")
-            {
-                string name = parts[1];
-                string description = parts[2];
-                int points = int.Parse(parts[3]);
-
-                EternalGoal goal = new EternalGoal(name, description, points);
-                _goals.Add(goal);
-            }
-
-            else if (parts[0] == "Checklist")
-            {
-                string name = parts[1];
-                string description = parts[2];
-                int points = int.Parse(parts[3]);
-                bool isComplete = bool.Parse(parts[4]); 
-                int count = int.Parse(parts[5]);         
-                int target = int.Parse(parts[6]);
-                int bouns = int.Parse(parts[7]); 
-
-                ChecklistGoal goal = new ChecklistGoal(name, description, points, isComplete, count, target, bouns);
-                _goals.Add(goal);
-            }
-           
         }
     }
 }
 
-
-
-            //      string[] lines = File.ReadAllLines(path);
-            //        foreach (string line in lines) 
-            //        string[] parts = line.Split("|");
-            //      SWITCH parts[0]
-            //          CASE "Score"
-            //              _score = parts[1]
-            //          CASE "SimpleGoal"
-            //              Simple simple = new( parts[1], parts[2], parts[3], parts[4] )
-            //              BREAK
-            //          CASE "EternalGoal"
-            //              Eternal eternal = new( parts[1], parts[2], parts[3], parts[4] )
-            //              BREAK
-            //          CASE "ChecklistGoal"
-            //              Checklist checklist = new( parts[1], parts[2], parts[3], parts[4], parts[5], parts[5], parts[7] )
-            //   BREAK
