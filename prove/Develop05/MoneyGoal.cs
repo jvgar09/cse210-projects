@@ -1,10 +1,10 @@
 using System;
 
-// Simple goal class -  sub class
-public class SimpleGoal : Goal //ineritence 
+// Money goal class -  sub class
+public class MoneyGoal : Goal //ineritence 
 {   //constroctors 
-    public SimpleGoal(string name, string description, int points) : base(name, description, points) { }
-    public SimpleGoal(string name, string description, int points, bool isCompleted) : base(name, description, points, isCompleted) { }
+    public MoneyGoal(string name, string description, int points) : base(name, description, points) { }
+    public MoneyGoal(string name, string description, int points, bool isCompleted) : base(name, description, points, isCompleted) { }
 
     public override int RecordEvent() //polmorphism 
     {
@@ -28,4 +28,3 @@ public class SimpleGoal : Goal //ineritence
 
 
 }
-

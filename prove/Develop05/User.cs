@@ -22,6 +22,8 @@ public class User
         Console.WriteLine("1. Simple Goal");
         Console.WriteLine("2. Eternal Goals");
         Console.WriteLine("3. Checklist Goals");
+        Console.WriteLine("4. Money Goals");
+
         Console.Write("Which type of goal would you like to create? ");
 
         string goalType = Console.ReadLine();
@@ -70,8 +72,24 @@ public class User
                 int target = int.Parse(Console.ReadLine());
                 Console.WriteLine("How many Bouns Points is the goal worth? ");
                 int bonus = int.Parse(Console.ReadLine());
+
                 ChecklistGoal checklist = new(name, description, points, target, bonus);
                 _goals.Add(checklist);
+
+                break;
+
+            case "4":
+
+                Console.WriteLine("What is the name of your Goal? ");
+                name = Console.ReadLine();
+                Console.WriteLine("What is the Description? ");
+                description = Console.ReadLine();
+                Console.WriteLine("How many Points is the goal worth? ");
+                points = int.Parse(Console.ReadLine());
+                Console.WriteLine("What is your Target? ");
+
+                MoneyGoal money = new(name, description, points);
+                _goals.Add(money);
 
                 break;
 
@@ -170,6 +188,17 @@ public class User
 
                     ChecklistGoal checklist = new ChecklistGoal(checklistName, checklistDescription, checklistPoints, checklistIsComplete, checklistCount, checklistTarget, checklistBonus);
                     break;
+
+                case "MoneyGoal":
+                    string moneyName = parts[1];
+                    string moneyDescription = parts[2];
+                    int moneyPoints = int.Parse(parts[3]);
+                    bool moneyIsComplete = bool.Parse(parts[4]);
+
+                    MoneyGoal money = new MoneyGoal(moneyName, moneyDescription, moneyPoints, moneyIsComplete);
+                    break;
+
+
 
             }
 
