@@ -85,8 +85,7 @@ public class User
                 description = Console.ReadLine();
                 Console.WriteLine("How many Points is the goal worth? ");
                 points = int.Parse(Console.ReadLine());
-                Console.WriteLine("What is your Target? ");
-
+                
                 MoneyGoal money = new(name, description, points);
                 _goals.Add(money);
 
