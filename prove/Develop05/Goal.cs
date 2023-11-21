@@ -54,11 +54,11 @@ public abstract class Goal
 
     //Abstract Methods of Goal
     public abstract int RecordEvent();
-    public virtual string Display()
+    public virtual string Display()  //polmorphism 
     {
         return $"[{GetIsCompletedChar()}] {_name} - {_description}";
     }
-    public virtual string GetSaveString()
+    public virtual string GetSaveString() //polmorphism 
     {
         return $"{GetType()}|{_name}|{_description}|{_points}";
     }

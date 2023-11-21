@@ -1,6 +1,6 @@
 
 // Checklist goal class
-public class ChecklistGoal : Goal
+public class ChecklistGoal : Goal //ineritence 
 {
     private int _completionTarget;
     private int _completionCount;
@@ -20,7 +20,7 @@ public class ChecklistGoal : Goal
         _bonus = bonus;
     }
 
-    public override int RecordEvent()
+    public override int RecordEvent() //polmorphism 
     {
         _completionCount++;
 
@@ -45,7 +45,7 @@ public class ChecklistGoal : Goal
         }
     }
 
-    public override string Display()
+    public override string Display() //polmorphism 
     {
         return $"{base.Display()}\n\tCompleted: [{_completionCount}/{_completionTarget}] times";
     }
