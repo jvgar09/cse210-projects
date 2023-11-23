@@ -1,24 +1,47 @@
+// Abstraction for Video class
 class Video
 {
-    public string Title { get; set; }
-    public string Author { get; set; }
-    public int Length { get; set; }
-    public List<Comment> Comments { get; set; } = new List<Comment>();
+    private string title;
+    private string author;
+    private int length;
+    private List<Comment> comments;
 
     public Video(string title, string author, int length)
     {
-        Title = title;
-        Author = author;
-        Length = length;
+        this.title = title;
+        this.author = author;
+        this.length = length;
+        this.comments = new List<Comment>();
     }
 
-    public void AddComment(string commenter, string text)
+    public string GetTitle()
     {
-        Comments.Add(new Comment(commenter, text));
+        return title;
+    }
+
+    public string GetAuthor()
+    {
+        return author;
+    }
+
+    public int GetLength()
+    {
+        return length;
+    }
+
+    public void AddComment(string commenterName, string commentText)
+    {
+        Comment comment = new Comment(commenterName, commentText);
+        comments.Add(comment);
     }
 
     public int GetNumberOfComments()
     {
-        return Comments.Count;
+        return comments.Count;
+    }
+
+    public List<Comment> GetComments()
+    {
+        return comments;
     }
 }

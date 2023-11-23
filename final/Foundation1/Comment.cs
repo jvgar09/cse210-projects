@@ -1,11 +1,23 @@
+
+// Abstraction for Comment class
 class Comment
 {
-    public string Commenter { get; set; }
-    public string Text { get; set; }
+    private string commenterName;
+    private string commentText;
 
-    public Comment(string commenter, string text)
+    public Comment(string commenterName, string commentText)
     {
-        Commenter = commenter;
-        Text = text;
+        this.commenterName = commenterName;
+        this.commentText = commentText;
+    }
+
+    public string GetCommenterName()
+    {
+        return commenterName;
+    }
+
+    public string GetCommentText()
+    {
+        return commentText;
     }
 }

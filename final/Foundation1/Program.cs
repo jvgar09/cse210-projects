@@ -5,39 +5,38 @@ class Program
 {
     static void Main()
     {
-        // Create videos
-        Video video1 = new Video("Title 1", "Author 1", 100);
-        Video video2 = new Video("Title 2", "Author 2", 100);
-        Video video3 = new Video("Title 3", "Author 3", 100);
+        // Create videos and comments
+        Video video1 = new Video("Title1", "Author1", 120);
+        video1.AddComment("User1", "Great video!");
+        video1.AddComment("User2", "This looks really delicious!");
 
-        // Add comments to videos
-        video1.AddComment("User1", "Awsome video!");
-        video1.AddComment("User2", "Peole will learn a lot from this video.");
+        Video video2 = new Video("Title2", "Author2", 180);
+        video2.AddComment("User3", "Yummy!");
+        video2.AddComment("User4", "Enjoyed watching.");
 
-        video2.AddComment("User3", "Very interstaing stuff.");
-        video2.AddComment("User4", "I love the way he cuts carrots into butterflies,etc. He truly has skills..");
+        Video video3 = new Video("Title3", "Author3", 150);
+        video3.AddComment("User5", "The food looks amazing!");
+        video3.AddComment("User6", "Well done.");
 
-        video3.AddComment("User5", "Nice presentation.");
-        video3.AddComment("User6", "This Chef is truly a Grand Master!");
-
-        // Put videos in a list
+        // Create a list of videos
         List<Video> videos = new List<Video> { video1, video2, video3 };
 
-        // Display information for each video
+        // Display info for each video
         foreach (Video video in videos)
         {
-            Console.WriteLine($"Title: {video.Title}");
-            Console.WriteLine($"Author: {video.Author}");
-            Console.WriteLine($"Length: {video.Length} seconds");
-            Console.WriteLine($"Number of Comments: {video.GetNumberOfComments()}");
-
-            // Display comments for the video
-            foreach (Comment comment in video.Comments)
+            Console.WriteLine($"Title: {video.GetTitle()}");
+            Console.WriteLine($"Author: {video.GetAuthor()}");
+            Console.WriteLine($"Length: {video.GetLength()} seconds");
+            Console.WriteLine($"Number of comments: {video.GetNumberOfComments()}");
+            
+            Console.WriteLine("Comments:");
+            foreach (Comment comment in video.GetComments())
             {
-                Console.WriteLine($"- {comment.Commenter}: {comment.Text}");
+                Console.WriteLine($"{comment.GetCommenterName()}: {comment.GetCommentText()}");
             }
 
-            Console.WriteLine(); // Add a blank line between videos for better readability
+            Console.WriteLine();
         }
     }
 }
+
