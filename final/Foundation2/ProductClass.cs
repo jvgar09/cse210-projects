@@ -6,7 +6,7 @@ class Product // class object
     private double price; //floating-point data type (used for storing values such as prices, percentages, or any numeric value requiring decimal precision.)
     private int quantity;
 
-    //construoctor
+    // Construoctor
     public Product(string name, int productId, double price, int quantity)
     {
         this.name = name;

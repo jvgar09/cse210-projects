@@ -4,7 +4,7 @@ class Order // class object
     private List<Product> products;
     private Customer customer;
 
-    //construoctor
+    // Construoctor
     public Order(Customer customer)
     {
         this.customer = customer;

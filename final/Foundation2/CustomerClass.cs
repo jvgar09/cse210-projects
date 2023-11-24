@@ -4,7 +4,7 @@ class Customer // class object
     private string name;
     private Address address;
 
-    //construoctor
+    // Construoctor
     public Customer(string name, Address address)
     {
         this.name = name;

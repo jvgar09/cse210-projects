@@ -6,7 +6,7 @@ class Address // class object
     private string state;
     private string country;
 
-    //construoctor
+    // Construoctor
     public Address(string street, string city, string state, string country)
     {
         this.street = street;
