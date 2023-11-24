@@ -1,16 +1,16 @@
 // Address class
 class Address
 {
-    public string Street { get; set; }
-    public string City { get; set; }
-    public string State { get; set; }
-    public string ZipCode { get; set; }
+    public string _Street { get; set; }
+    public string _City { get; set; }
+    public string _State { get; set; }
+    public string _ZipCode { get; set; }
 
     public Address(string street, string city, string state, string zipCode)
     {
-        Street = street;
-        City = city;
-        State = state;
-        ZipCode = zipCode;
+        _Street = street;
+        _City = city;
+        _State = state;
+        _ZipCode = zipCode;
     }
 }

@@ -18,7 +18,7 @@ class Event
 
     public string GetStandardDetails()
     {
-        return $"Title: {_title}\nDescription: {_description}\nDate: {_date.ToShortDateString()}\nTime: {_time}\nAddress: {_address.Street}, {_address.City}, {_address.State} {_address.ZipCode}";
+        return $"Title: {_title}\nDescription: {_description}\nDate: {_date.ToShortDateString()}\nTime: {_time}\nAddress: {_address._Street}, {_address._City}, {_address._State} {_address._ZipCode}";
     }
 
     public string GetFullDetails()

@@ -1,5 +1,5 @@
 // Reception class
-class Reception : Event
+class Reception : Event 
 {
     private string _rsvpEmail;
 
