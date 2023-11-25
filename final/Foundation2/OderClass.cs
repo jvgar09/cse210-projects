@@ -1,31 +1,31 @@
 class Order // class object 
 {
     // access modifier, data type, variable;
-    private List<Product> products;
-    private Customer customer;
+    private List<Product> _products;
+    private Customer _customer;
 
     // Construoctor
     public Order(Customer customer)
     {
-        this.customer = customer;
-        this.products = new List<Product>();
+        _customer = customer;
+        _products = new List<Product>();
     }
 
     public void AddProduct(Product product)
     {
-        products.Add(product);
+        _products.Add(product);
     }
 
     public double CalculateTotalCost()
     {
         double totalCost = 0;
-        foreach (Product product in products)
+        foreach (Product product in _products)
         {
             totalCost += product.CalculatePrice();
         }
 
         // Add one-time shipping cost based on customer's location
-        totalCost += customer.IsInUSA() ? 5 : 35;
+        totalCost += _customer.IsInUSA() ? 5 : 35;
 
         return totalCost;
     }
@@ -33,7 +33,7 @@ class Order // class object
     public string GetPackingLabel()
     {
         string packingLabel = "";
-        foreach (Product product in products)
+        foreach (Product product in _products)
         {
             packingLabel += $"{product.Name} (ID: {product.ProductId})\n";
         }
@@ -43,6 +43,6 @@ class Order // class object
 
     public string GetShippingLabel()
     {
-        return $"{customer.Name}\n{customer.GetAddressAsString()}";
+        return $"{_customer.Name}\n{_customer.GetAddressAsString()}";
     }
 }
