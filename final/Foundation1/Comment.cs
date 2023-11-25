@@ -1,23 +1,24 @@
-
 // Abstraction for Comment class
 class Comment
 {
-    private string commenterName;
-    private string commentText;
+    // access modifier, data type, variable;
+    private string _commenterName; // attributes
+    private string _commentText;  // attributes
 
+     // Construoctor
     public Comment(string commenterName, string commentText)
     {
-        this.commenterName = commenterName;
-        this.commentText = commentText;
+        _commenterName = commenterName;
+        _commentText = commentText;
     }
 
-    public string GetCommenterName()
+    public string GetCommenterName() // behavior/methods 
     {
-        return commenterName;
+        return _commenterName;
     }
 
-    public string GetCommentText()
+    public string GetCommentText() // behavior/methods
     {
-        return commentText;
+        return _commentText;
     }
 }
