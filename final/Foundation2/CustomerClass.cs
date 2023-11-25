@@ -1,25 +1,25 @@
 class Customer // class object 
 {
     // access modifier, data type, variable;
-    private string name;
-    private Address address;
+    private string _name;
+    private Address _address;
 
     // Construoctor
     public Customer(string name, Address address)
     {
-        this.name = name;
-        this.address = address;
+        _name = name;
+        _address = address;
     }
 
     public bool IsInUSA()  // Calls the IsInUSA method of the associated address
     {
-        return address.IsInUSA();
+        return _address.IsInUSA();
     }
 
-    public string Name { get { return name; } }
+    public string Name { get { return _name; } }
 
     public string GetAddressAsString()
     {
-        return address.ToString();
+        return _address.ToString();
     }
 }
