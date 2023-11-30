@@ -32,7 +32,8 @@ class Video
         return _length;
     }
     
-    public void AddComment(string commenterName, string commentText)
+    //method/behavior, adding a new comment to the list of comments associated with a video
+    public void AddComment(string commenterName, string commentText) 
     {
         Comment comment = new Comment(commenterName, commentText);
         _comments.Add(comment);
