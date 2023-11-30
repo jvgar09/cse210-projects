@@ -1,3 +1,4 @@
+
 class Customer // class object 
 {
     // access modifier, data type, variable;
