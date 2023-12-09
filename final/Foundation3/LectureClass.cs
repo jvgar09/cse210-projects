@@ -1,4 +1,4 @@
-// Derived Lecture class, (derived class)
+// Derived Lecture class, (child class)
 class Lecture : Event // Inheritance
 {
     // encapsulation
