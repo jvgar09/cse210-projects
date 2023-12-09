@@ -1,6 +1,6 @@
 using System;
 
-// Base Event class with common attributes and methods, Base class (parent class)
+// Base Event class, (parent class)
 class Event
 {
     // the attributes are encapsulated
